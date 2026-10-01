@@ -1,55 +1,720 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ludoteca — Biblioteca de reseñas de videojuegos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ludoteca — Biblioteca de videojuegos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Work+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-<header class="site-header">
-<div class="header-inner">
-<h1>Ludoteca</h1>
-<p class="tagline">Catálogo de reseñas de videojuegos, ficha a ficha.</p>
-</div>
-</header>
+    <!-- =====================================================
+       CABECERA
+  ====================================================== -->
 
-<main>
-<section class="controls" aria-label="Filtros de búsqueda">
-<input
-type="text"
-id="search-input"
-placeholder="Buscar por título…"
-aria-label="Buscar juego por título"
->
+    <header class="site-header" id="inicio">
 
-<select id="genre-filter" aria-label="Filtrar por género">
-<option value="">Todos los géneros</option>
-</select>
+        <div class="header-inner">
 
-<select id="platform-filter" aria-label="Filtrar por plataforma">
-<option value="">Todas las plataformas</option>
-</select>
-</section>
+            <p class="site-kicker">
+                ARCHIVO DIGITAL · EDICIÓN 2026
+            </p>
 
-<p id="results-count" class="results-count"></p>
+            <h1>Ludoteca</h1>
 
-<section id="game-grid" class="game-grid" aria-live="polite">
-<!-- Las fichas se generan dinámicamente desde script.js -->
-</section>
+            <p class="tagline">
+                Catálogo de videojuegos, noticias y pequeñas historias
+                del mundo del videojuego.
+            </p>
 
-<p id="empty-message" class="empty-message" hidden>
-No hay fichas que coincidan con esa búsqueda.
-</p>
-</main>
+        </div>
 
-<footer class="site-footer">
-<p>Ludoteca — Trabajo de clase (SMR). Datos ficticios con fines de práctica.</p>
-</footer>
+    </header>
 
-<script src="index.js"></script>
+
+    <!-- =====================================================
+       NAVEGACIÓN
+  ====================================================== -->
+
+    <nav class="site-nav" aria-label="Navegación principal">
+
+        <div class="nav-inner">
+
+            <a href="#inicio" class="nav-link active">
+                Inicio
+            </a>
+
+            <a href="#catalogo" class="nav-link">
+                Catálogo
+            </a>
+
+            <a href="#plataformas" class="nav-link">
+                Plataformas
+            </a>
+
+            <a href="#noticias" class="nav-link">
+                Noticias
+            </a>
+
+            <a href="#especiales" class="nav-link">
+                Especiales
+            </a>
+
+            <a href="#sobre-ludoteca" class="nav-link">
+                Sobre Ludoteca
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- =====================================================
+         INICIO
+    ====================================================== -->
+
+        <section id="inicio" class="home-section" aria-labelledby="inicio-title">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        01 · PORTADA
+                    </span>
+
+                    <h2 id="inicio-title">
+                        La biblioteca de los videojuegos
+                    </h2>
+                </div>
+
+                <p>
+                    Una colección de reseñas, descubrimientos y curiosidades
+                    reunidas ficha a ficha.
+                </p>
+
+            </div>
+
+
+            <!-- JUEGO DESTACADO -->
+
+            <article class="featured-game">
+
+                <div class="featured-content">
+
+                    <span class="featured-label">
+                        ✦ JUEGO DESTACADO
+                    </span>
+
+                    <h3>
+                        The Legend of Zelda: Breath of the Wild
+                    </h3>
+
+                    <p>
+                        Una aventura de mundo abierto que invita a explorar
+                        Hyrule con una enorme libertad. Link despierta tras
+                        un largo sueño y debe recuperar sus recuerdos mientras
+                        descubre qué ha ocurrido con el reino.
+                    </p>
+
+                    <a href="#catalogo" class="featured-link">
+                        Ver en el catálogo →
+                    </a>
+
+                </div>
+
+                <div class="featured-score">
+                    <span>9.6</span>
+                    <small>VALORACIÓN</small>
+                </div>
+
+            </article>
+
+
+            <!-- MINI DESTACADOS -->
+
+            <div class="home-columns">
+
+                <article class="mini-card">
+
+                    <span class="card-label">
+                        DESCUBRIMIENTO
+                    </span>
+
+                    <h3>
+                        La magia de los mundos abiertos
+                    </h3>
+
+                    <p>
+                        ¿Por qué algunos juegos consiguen que simplemente
+                        recorrer su mundo sea una experiencia memorable?
+                        Repasamos algunos de los mejores ejemplos.
+                    </p>
+
+                    <a href="#especiales">
+                        Leer especial →
+                    </a>
+
+                </article>
+
+
+                <article class="mini-card">
+
+                    <span class="card-label">
+                        ACTUALIDAD
+                    </span>
+
+                    <h3>
+                        El videojuego sigue evolucionando
+                    </h3>
+
+                    <p>
+                        Nuevas aventuras, remakes, experiencias independientes
+                        y grandes producciones mantienen el medio en constante
+                        movimiento.
+                    </p>
+
+                    <a href="#noticias">
+                        Ver noticias →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+         CATÁLOGO
+    ====================================================== -->
+
+        <section id="catalogo" class="catalog-section" aria-labelledby="catalog-title">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        02 · ARCHIVO
+                    </span>
+
+                    <h2 id="catalog-title">
+                        Catálogo de videojuegos
+                    </h2>
+
+                </div>
+
+                <p>
+                    Fichas seleccionadas de diferentes géneros,
+                    épocas y plataformas.
+                </p>
+
+            </div>
+
+
+            <!-- FILTROS -->
+
+            <div class="controls" aria-label="Filtros de búsqueda">
+
+                <input type="text" id="search-input" placeholder="Buscar por título…"
+                    aria-label="Buscar juego por título">
+
+                <select id="genre-filter" aria-label="Filtrar por género">
+
+                    <option value="">
+                        Todos los géneros
+                    </option>
+
+                </select>
+
+                <select id="platform-filter" aria-label="Filtrar por plataforma">
+
+                    <option value="">
+                        Todas las plataformas
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <p id="results-count" class="results-count"></p>
+
+
+            <section id="game-grid" class="game-grid" aria-live="polite">
+                <!-- Las fichas se generan dinámicamente desde index.js -->
+            </section>
+
+
+            <p id="empty-message" class="empty-message" hidden>
+                No hay fichas que coincidan con esa búsqueda.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+         PLATAFORMAS
+    ====================================================== -->
+
+        <section id="plataformas" class="platform-section" aria-labelledby="platform-title">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        03 · SISTEMAS
+                    </span>
+
+                    <h2 id="platform-title">
+                        Plataformas
+                    </h2>
+
+                </div>
+
+                <p>
+                    Cuatro ecosistemas, cuatro maneras diferentes
+                    de entender los videojuegos.
+                </p>
+
+            </div>
+
+
+            <div class="platform-grid">
+
+                <article class="platform-card">
+
+                    <span class="platform-number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            PC
+                        </h3>
+
+                        <p>
+                            Una plataforma abierta donde conviven grandes
+                            producciones, juegos independientes, mods y
+                            una enorme biblioteca histórica.
+                        </p>
+
+                    </div>
+
+                    <span class="platform-arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="platform-card">
+
+                    <span class="platform-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            PlayStation
+                        </h3>
+
+                        <p>
+                            Una plataforma especialmente conocida por sus
+                            aventuras narrativas y experiencias para un jugador.
+                        </p>
+
+                    </div>
+
+                    <span class="platform-arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="platform-card">
+
+                    <span class="platform-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Xbox
+                        </h3>
+
+                        <p>
+                            Un ecosistema centrado en la variedad, el juego
+                            multiplataforma y servicios como Game Pass.
+                        </p>
+
+                    </div>
+
+                    <span class="platform-arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="platform-card">
+
+                    <span class="platform-number">
+                        04
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Nintendo
+                        </h3>
+
+                        <p>
+                            Una filosofía basada en personajes reconocibles,
+                            creatividad y formas diferentes de jugar.
+                        </p>
+
+                    </div>
+
+                    <span class="platform-arrow">
+                        →
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+         NOTICIAS
+    ====================================================== -->
+
+        <section id="noticias" class="news-section" aria-labelledby="news-title">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        04 · ACTUALIDAD
+                    </span>
+
+                    <h2 id="news-title">
+                        Noticias
+                    </h2>
+
+                </div>
+
+                <p>
+                    Selección editorial de actualidad y cultura del videojuego.
+                </p>
+
+            </div>
+
+
+            <div class="news-grid">
+
+
+                <!-- NOTICIA PRINCIPAL -->
+
+                <article class="news-card news-featured">
+
+                    <div class="news-meta">
+
+                        <span>
+                            LANZAMIENTOS
+                        </span>
+
+                        <time datetime="2026-09-28">
+                            28 SEP 2026
+                        </time>
+
+                    </div>
+
+                    <h3>
+                        El regreso de las grandes aventuras para un jugador
+                    </h3>
+
+                    <p>
+                        Las experiencias centradas en explorar mundos,
+                        descubrir personajes y contar historias siguen
+                        teniendo un lugar destacado dentro de la industria.
+                    </p>
+
+                    <a href="#">
+                        Leer noticia →
+                    </a>
+
+                </article>
+
+
+                <!-- NOTICIA 2 -->
+
+                <article class="news-card">
+
+                    <div class="news-meta">
+
+                        <span>
+                            PLAYSTATION
+                        </span>
+
+                        <time datetime="2026-09-24">
+                            24 SEP 2026
+                        </time>
+
+                    </div>
+
+                    <h3>
+                        Astro Bot demuestra que las plataformas
+                        clásicas siguen muy vivas
+                    </h3>
+
+                    <p>
+                        La aventura de Team Asobi apuesta por el
+                        plataformas 3D, el humor y las posibilidades
+                        del mando DualSense.
+                    </p>
+
+                    <a href="#">
+                        Leer noticia →
+                    </a>
+
+                </article>
+
+
+                <!-- NOTICIA 3 -->
+
+                <article class="news-card">
+
+                    <div class="news-meta">
+
+                        <span>
+                            MUNDO ABIERTO
+                        </span>
+
+                        <time datetime="2026-09-18">
+                            18 SEP 2026
+                        </time>
+
+                    </div>
+
+                    <h3>
+                        Forza Horizon 5 convierte México en un enorme
+                        circuito de aventuras
+                    </h3>
+
+                    <p>
+                        Carreras, exploración y eventos dinámicos se
+                        combinan en uno de los mundos abiertos de conducción
+                        más reconocibles de los últimos años.
+                    </p>
+
+                    <a href="#">
+                        Leer noticia →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+         ESPECIALES
+    ====================================================== -->
+
+        <section id="especiales" class="special-section" aria-labelledby="special-title">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        05 · EDITORIAL
+                    </span>
+
+                    <h2 id="special-title">
+                        Especiales de Ludoteca
+                    </h2>
+
+                </div>
+
+                <p>
+                    Artículos para mirar los videojuegos desde otra perspectiva.
+                </p>
+
+            </div>
+
+
+            <div class="special-grid">
+
+
+                <article class="special-card">
+
+                    <span class="special-icon">
+                        ✦
+                    </span>
+
+                    <h3>
+                        10 juegos para una tarde tranquila
+                    </h3>
+
+                    <p>
+                        Desde aventuras relajadas hasta pequeños mundos
+                        que invitan a explorar sin ninguna prisa.
+                    </p>
+
+                    <a href="#">
+                        Explorar selección →
+                    </a>
+
+                </article>
+
+
+                <article class="special-card">
+
+                    <span class="special-icon">
+                        ✦
+                    </span>
+
+                    <h3>
+                        Cuando los videojuegos cuentan historias
+                    </h3>
+
+                    <p>
+                        Personajes, mundos y decisiones que demuestran
+                        que un videojuego también puede ser una forma
+                        de narración.
+                    </p>
+
+                    <a href="#">
+                        Leer artículo →
+                    </a>
+
+                </article>
+
+
+                <article class="special-card">
+
+                    <span class="special-icon">
+                        ✦
+                    </span>
+
+                    <h3>
+                        Pequeños clásicos
+                    </h3>
+
+                    <p>
+                        Títulos que quizá no tuvieron grandes campañas
+                        publicitarias pero que todavía conservan algo especial.
+                    </p>
+
+                    <a href="#">
+                        Descubrir clásicos →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+         SOBRE LUDOTECA
+    ====================================================== -->
+
+        <section id="sobre-ludoteca" class="about-section" aria-labelledby="about-title">
+
+            <div class="about-content">
+
+                <span class="section-label">
+                    06 · EL PROYECTO
+                </span>
+
+                <h2 id="about-title">
+                    Sobre Ludoteca
+                </h2>
+
+                <p>
+                    Ludoteca es un proyecto web creado para organizar
+                    información sobre videojuegos de una forma sencilla,
+                    visual y fácil de consultar.
+                </p>
+
+                <p>
+                    La idea combina un catálogo interactivo con contenidos
+                    editoriales, noticias y pequeñas recomendaciones.
+                    Cada juego se presenta como una ficha dentro de un
+                    archivo digital.
+                </p>
+
+                <p>
+                    El proyecto está desarrollado como práctica de
+                    tecnologías web dentro de Formación Profesional,
+                    utilizando HTML, CSS y JavaScript.
+                </p>
+
+            </div>
+
+
+            <aside class="about-note">
+
+                <span>
+                    NOTA DEL ARCHIVISTA
+                </span>
+
+                <p>
+                    "No todos los grandes juegos necesitan ser nuevos.
+                    Algunos solo necesitan que alguien vuelva a abrirlos."
+                </p>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+    <footer class="site-footer">
+
+        <p>
+            Ludoteca — Proyecto de Formación Profesional.
+        </p>
+
+        <p>
+            Contenido elaborado con fines educativos.
+        </p>
+
+    </footer>
+
+
+    <script src="index.js"></script>
+
 </body>
+
 </html>
